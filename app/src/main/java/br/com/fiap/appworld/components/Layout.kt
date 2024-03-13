@@ -28,7 +28,7 @@ fun AppLayout(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(Color(0xFF033A8E))
-                .height(45.dp)
+                .height(50.dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.infoweather),
