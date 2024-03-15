@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import br.com.fiap.appworld.screens.HomeScreen
+import br.com.fiap.appworld.screens.WeatherScreen
 import br.com.fiap.appworld.ui.theme.AppWorldTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +20,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HomeScreen()
+//                    HomeScreen()
+                    WeatherScreen()
                 }
             }
         }
