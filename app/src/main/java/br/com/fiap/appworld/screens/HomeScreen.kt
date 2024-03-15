@@ -24,13 +24,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.fiap.appworld.R
 import br.com.fiap.appworld.components.AppLayout
 import br.com.fiap.appworld.ui.theme.BackgroundWhite
 import br.com.fiap.appworld.ui.theme.DarkBlue
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
     AppLayout() {
         Column(
             Modifier
@@ -69,7 +70,7 @@ fun HomeScreen() {
                 },
                 keyboardOptions = KeyboardOptions(KeyboardCapitalization.Words),
                 trailingIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = { navController.navigate("weather") }) {
                         Icon(
                             imageVector = Icons.Default.Send,
                             contentDescription = "Arrow",
