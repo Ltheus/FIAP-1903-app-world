@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Projeto Fase 1 App World</string>
+    <string name="app_name">InfoWeather</string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="home_title">Weather today:</string>
+    <string name="start_input_label">Where are you at?</string>
+    <string name="search_input_label">Search cities</string>
+    <string name="input_placeholder">Type the name of the city:</string>
 </resources>

@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
@@ -46,7 +47,7 @@ fun WeatherScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
         ) {
             Text(
-                text = "Hoje",
+                text = stringResource(id = R.string.home_title),
                 fontSize = 28.sp,
                 fontWeight = FontWeight(700),
                 color = DarkBlue
@@ -75,7 +76,7 @@ fun WeatherScreen() {
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.droplet_icon),
-                        contentDescription = "Sun image",
+                        contentDescription = "Sun icon",
                         modifier = Modifier.size(width = 16.dp, height = 16.dp)
                     )
                     Text(
@@ -97,10 +98,10 @@ fun WeatherScreen() {
                 ),
                 shape = RoundedCornerShape(15.dp),
                 label = {
-                    Text(text = "Pesquisar cidades")
+                    Text(text = stringResource(id = R.string.search_input_label))
                 },
                 placeholder = {
-                    Text(text = "Digite o nome da cidade")
+                    Text(text = stringResource(id = R.string.input_placeholder))
                 },
                 keyboardOptions = KeyboardOptions(KeyboardCapitalization.Words),
                 trailingIcon = {

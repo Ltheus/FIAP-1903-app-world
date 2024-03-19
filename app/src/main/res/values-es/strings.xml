@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">¡Bienvenido(a)!</string>
+    <string name="home_title">Tiempo hoy:</string>
+    <string name="start_input_label">¿En qué ciudad te encuentras??</string>
+    <string name="search_input_label">Buscar ciudades</string>
+    <string name="input_placeholder">Introduce el nombre de la ciudad:</string>
+</resources>

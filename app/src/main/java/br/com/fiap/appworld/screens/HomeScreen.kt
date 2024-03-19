@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
@@ -42,7 +43,7 @@ fun HomeScreen(navController: NavController) {
             verticalArrangement = Arrangement.SpaceAround,
         ) {
             Text(
-                text = "Bem-vindo(a)!",
+                text = stringResource(id = R.string.welcome),
                 fontSize = 32.sp,
                 fontWeight = FontWeight(700),
                 color = DarkBlue
@@ -63,10 +64,10 @@ fun HomeScreen(navController: NavController) {
                 ),
                 shape = RoundedCornerShape(15.dp),
                 label = {
-                    Text(text = "Em que cidade você está?")
+                    Text(text = stringResource(id = R.string.start_input_label))
                 },
                 placeholder = {
-                    Text(text = "Digite o nome da cidade")
+                    Text(text = stringResource(id = R.string.input_placeholder))
                 },
                 keyboardOptions = KeyboardOptions(KeyboardCapitalization.Words),
                 trailingIcon = {
