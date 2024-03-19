@@ -46,12 +46,25 @@ fun WeatherScreen() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly,
         ) {
-            Text(
-                text = stringResource(id = R.string.home_title_key),
-                fontSize = 28.sp,
-                fontWeight = FontWeight(700),
-                color = DarkBlue
-            )
+            Column(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 30.dp),
+                horizontalAlignment = Alignment.Start,
+            ) {
+                Text(
+                    text = "São Paulo",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight(500),
+                    color = DarkBlue
+                )
+                Text(
+                    text = stringResource(id = R.string.home_title_key),
+                    fontSize = 28.sp,
+                    fontWeight = FontWeight(700),
+                    color = DarkBlue
+                )
+            }
             Image(
                 painter = painterResource(id = R.drawable.sun_icon),
                 contentDescription = stringResource(id = R.string.weather_icon),
@@ -73,30 +86,35 @@ fun WeatherScreen() {
                     fontWeight = FontWeight(400),
                     color = TextBlack
                 )
-                Text(
-                    text = "${stringResource(id = R.string.feelslike_key)} 34 Cº",
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight(400),
-                    color = TextBlack
-                )
+
                 Row(
                     modifier = Modifier
                         .fillMaxWidth(),
 //                    .background(color = Yellow),
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    horizontalArrangement = Arrangement.SpaceAround
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.droplet_icon),
-                        contentDescription = stringResource(id = R.string.droplet_icon),
-                        modifier = Modifier.size(width = 18.dp, height = 18.dp)
-                    )
                     Text(
-                        text = ": 63%",
+                        text = "${stringResource(id = R.string.feelslike_key)} 34 Cº",
                         fontSize = 18.sp,
                         fontWeight = FontWeight(400),
                         color = TextBlack
                     )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.droplet_icon),
+                            contentDescription = stringResource(id = R.string.droplet_icon),
+                            modifier = Modifier.size(width = 18.dp, height = 18.dp)
+                        )
+                        Text(
+                            text = ": 63%",
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight(400),
+                            color = TextBlack
+                        )
+                    }
                 }
             }
             OutlinedTextField(
