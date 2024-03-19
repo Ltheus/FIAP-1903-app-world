@@ -2,8 +2,19 @@
     <string name="app_name">InfoWeather</string>
 
     <string name="welcome">Welcome!</string>
-    <string name="home_title">Weather today:</string>
     <string name="start_input_label">Where are you at?</string>
     <string name="search_input_label">Search cities</string>
     <string name="input_placeholder">Type the name of the city:</string>
+
+    <string name="home_title_key">Weather today:</string>
+    <string name="feelslike_key">Feels like:</string>
+
+    <string name="infoweather_logo">InfoWeather Logo</string>
+    <string name="infoweather_icon">InfoWeather Icon</string>
+
+    <string name="weather_icon">Weather</string>
+    <string name="arrow_icon">Arrow</string>
+    <string name="search_icon">Search</string>
+    <string name="droplet_icon">Humidity</string>
+
 </resources>

@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">InfoWeather</string>
+
     <string name="welcome">¡Bienvenido(a)!</string>
     <string name="home_title">Tiempo hoy:</string>
     <string name="start_input_label">¿En qué ciudad te encuentras??</string>
     <string name="search_input_label">Buscar ciudades</string>
     <string name="input_placeholder">Introduce el nombre de la ciudad:</string>
+
+    <string name="home_title_key">Tiepo hoy:</string>
+    <string name="feelslike_key">Sensación térmica:</string>
+
+    <string name="infoweather_logo">Logo InfoWeather</string>
+    <string name="infoweather_icon">Icono InfoWeather</string>
+
+    <string name="weather_icon">Tiempo</string>
+    <string name="arrow_icon">Flecha</string>
+    <string name="search_icon">Buscar</string>
+    <string name="droplet_icon">Humedad</string>
 </resources>

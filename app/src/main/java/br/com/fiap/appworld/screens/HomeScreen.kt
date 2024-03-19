@@ -50,7 +50,7 @@ fun HomeScreen(navController: NavController) {
             )
             Image(
                 painter = painterResource(id = R.drawable.infoweather_icon),
-                contentDescription = "InfoWeather Icon",
+                contentDescription = stringResource(id = R.string.infoweather_icon),
                 modifier = Modifier.size(width = 170.dp, height = 170.dp)
             )
             OutlinedTextField(
@@ -74,7 +74,7 @@ fun HomeScreen(navController: NavController) {
                     IconButton(onClick = { navController.navigate("weather") }) {
                         Icon(
                             imageVector = Icons.Default.Send,
-                            contentDescription = "Arrow",
+                            contentDescription = stringResource(id = R.string.arrow_icon),
                             tint = DarkBlue
                         )
                     }

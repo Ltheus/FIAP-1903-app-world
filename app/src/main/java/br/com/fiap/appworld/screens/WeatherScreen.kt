@@ -47,14 +47,14 @@ fun WeatherScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
         ) {
             Text(
-                text = stringResource(id = R.string.home_title),
+                text = stringResource(id = R.string.home_title_key),
                 fontSize = 28.sp,
                 fontWeight = FontWeight(700),
                 color = DarkBlue
             )
             Image(
                 painter = painterResource(id = R.drawable.sun_icon),
-                contentDescription = "Sun image",
+                contentDescription = stringResource(id = R.string.weather_icon),
                 modifier = Modifier.size(width = 170.dp, height = 170.dp)
             )
             Column(
@@ -62,9 +62,21 @@ fun WeatherScreen() {
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 Text(
-                    text = "Min: 26 Cº | Max: 34 Cº",
-                    fontSize = 20.sp,
+                    text = "34 Cº",
+                    fontSize = 28.sp,
                     fontWeight = FontWeight(700),
+                    color = DarkBlue
+                )
+                Text(
+                    text = "Min: 26 Cº | Max: 34 Cº",
+                    fontSize = 28.sp,
+                    fontWeight = FontWeight(400),
+                    color = TextBlack
+                )
+                Text(
+                    text = "${stringResource(id = R.string.feelslike_key)} 34 Cº",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight(400),
                     color = TextBlack
                 )
                 Row(
@@ -76,13 +88,13 @@ fun WeatherScreen() {
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.droplet_icon),
-                        contentDescription = "Sun icon",
-                        modifier = Modifier.size(width = 16.dp, height = 16.dp)
+                        contentDescription = stringResource(id = R.string.droplet_icon),
+                        modifier = Modifier.size(width = 18.dp, height = 18.dp)
                     )
                     Text(
                         text = ": 63%",
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight(700),
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight(400),
                         color = TextBlack
                     )
                 }
@@ -108,7 +120,7 @@ fun WeatherScreen() {
                     IconButton(onClick = { /*TODO*/ }) {
                         Icon(
                             imageVector = Icons.Default.Search,
-                            contentDescription = "Arrow",
+                            contentDescription = stringResource(id = R.string.search_icon),
                             tint = DarkBlue
                         )
                     }
