@@ -17,6 +17,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -33,7 +37,11 @@ import br.com.fiap.appworld.ui.theme.DarkBlue
 
 @Composable
 fun HomeScreen(navController: NavController) {
-    AppLayout() {
+    var cityState by remember {
+        mutableStateOf("")
+    }
+    val inputError = stringResource(id = R.string.input_error)
+    AppLayout {
         Column(
             Modifier
                 .fillMaxSize()
@@ -54,8 +62,8 @@ fun HomeScreen(navController: NavController) {
                 modifier = Modifier.size(width = 170.dp, height = 170.dp)
             )
             OutlinedTextField(
-                value = "",
-                onValueChange = {},
+                value = cityState,
+                onValueChange = { cityState = it },
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = DarkBlue,
                     unfocusedBorderColor = DarkBlue,
@@ -71,7 +79,13 @@ fun HomeScreen(navController: NavController) {
                 },
                 keyboardOptions = KeyboardOptions(KeyboardCapitalization.Words),
                 trailingIcon = {
-                    IconButton(onClick = { navController.navigate("weather") }) {
+                    IconButton(onClick = {
+                        if (cityState !== "") {
+                            navController.navigate("weather/$cityState")
+                        } else {
+                            cityState = inputError
+                        }
+                    }) {
                         Icon(
                             imageVector = Icons.Default.Send,
                             contentDescription = stringResource(id = R.string.arrow_icon),

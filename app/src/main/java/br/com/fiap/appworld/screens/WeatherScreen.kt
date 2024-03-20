@@ -1,5 +1,6 @@
 package br.com.fiap.appworld.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,9 +20,13 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -30,14 +35,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.appworld.R
 import br.com.fiap.appworld.components.AppLayout
+import br.com.fiap.appworld.model.Weather
+import br.com.fiap.appworld.services.RetrofitFactory
 import br.com.fiap.appworld.ui.theme.BackgroundWhite
 import br.com.fiap.appworld.ui.theme.DarkBlue
 import br.com.fiap.appworld.ui.theme.TextBlack
-import br.com.fiap.appworld.ui.theme.Yellow
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.Locale
 
 @Composable
-fun WeatherScreen() {
-    AppLayout() {
+fun WeatherScreen(city: String) {
+    var cityState by remember {
+        mutableStateOf("")
+    }
+
+    AppLayout {
         Column(
             Modifier
                 .fillMaxSize()
@@ -53,7 +67,7 @@ fun WeatherScreen() {
                 horizontalAlignment = Alignment.Start,
             ) {
                 Text(
-                    text = "São Paulo",
+                    text = city,
                     fontSize = 18.sp,
                     fontWeight = FontWeight(500),
                     color = DarkBlue
@@ -75,13 +89,13 @@ fun WeatherScreen() {
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 Text(
-                    text = "34 Cº",
+                    text = "24 Cº",
                     fontSize = 28.sp,
                     fontWeight = FontWeight(700),
                     color = DarkBlue
                 )
                 Text(
-                    text = "Min: 26 Cº | Max: 34 Cº",
+                    text = "Min: 23 Cº | Max: 27 Cº",
                     fontSize = 28.sp,
                     fontWeight = FontWeight(400),
                     color = TextBlack
@@ -90,12 +104,11 @@ fun WeatherScreen() {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth(),
-//                    .background(color = Yellow),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     Text(
-                        text = "${stringResource(id = R.string.feelslike_key)} 34 Cº",
+                        text = "${stringResource(id = R.string.feelslike_key)} 25 Cº",
                         fontSize = 18.sp,
                         fontWeight = FontWeight(400),
                         color = TextBlack
@@ -118,8 +131,8 @@ fun WeatherScreen() {
                 }
             }
             OutlinedTextField(
-                value = "",
-                onValueChange = {},
+                value = cityState,
+                onValueChange = { cityState = it },
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = DarkBlue,
                     unfocusedBorderColor = DarkBlue,
@@ -135,7 +148,8 @@ fun WeatherScreen() {
                 },
                 keyboardOptions = KeyboardOptions(KeyboardCapitalization.Words),
                 trailingIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                    }) {
                         Icon(
                             imageVector = Icons.Default.Search,
                             contentDescription = stringResource(id = R.string.search_icon),

@@ -5,6 +5,7 @@
     <string name="start_input_label">Where are you at?</string>
     <string name="search_input_label">Search cities</string>
     <string name="input_placeholder">Type the name of the city:</string>
+    <string name="input_error">This field can\'t be empty.</string>
 
     <string name="home_title_key">Weather today:</string>
     <string name="feelslike_key">Feels like:</string>

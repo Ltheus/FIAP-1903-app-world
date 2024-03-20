@@ -6,6 +6,7 @@
     <string name="start_input_label">Qual cidade você está?</string>
     <string name="search_input_label">Pesquisar cidades</string>
     <string name="input_placeholder">Digite o nome da cidade:</string>
+    <string name="input_error">Este campo é obrigatório.</string>
 
     <string name="home_title_key">Clima hoje:</string>
     <string name="feelslike_key">Sensação de:</string>
