@@ -29,7 +29,9 @@ class MainActivity : ComponentActivity() {
                         startDestination = "home"
                     ) {
                         composable(route = "home"){ HomeScreen(navController)}
-                        composable(route = "weather"){ WeatherScreen()}
+                        composable(route = "weather/{city}"){
+                            val city = it.arguments?.getString("city")
+                            WeatherScreen(city!!)}
                     }
                 }
             }

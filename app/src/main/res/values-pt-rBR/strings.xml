@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InfoWeather</string>
+
+    <string name="welcome">Bem-vindo(a)!</string>
+    <string name="start_input_label">Qual cidade você está?</string>
+    <string name="search_input_label">Pesquisar cidades</string>
+    <string name="input_placeholder">Digite o nome da cidade:</string>
+    <string name="input_error">Este campo é obrigatório.</string>
+
+    <string name="home_title_key">Clima hoje:</string>
+    <string name="feelslike_key">Sensação de:</string>
+
+    <string name="infoweather_logo">Logotipo InfoWeather</string>
+    <string name="infoweather_icon">Ícone InfoWeather</string>
+
+    <string name="weather_icon">Clima</string>
+    <string name="arrow_icon">Enviar</string>
+    <string name="search_icon">Pesquisar</string>
+    <string name="droplet_icon">Umidade</string>
+</resources>
